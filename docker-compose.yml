@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: prueba123e
+      POSTGRES_DB: stations_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:prueba123e@db:5432/stations_db
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app  # Opcional para desarrollo, para reflejar cambios sin reconstruir la imagen
+
+volumes:
+  postgres_data:

@@ -1,4 +1,4 @@
-# stations_API - Guia de despliegue
+# stations_API - Guía de despliegue
 ## 1. Configuración del entorno de desarrollo
 1. **Clonar el repositorio:**
     git clone https://github.com/SaraCmque/stations_API.git
@@ -32,3 +32,34 @@
 2. **Probar la API:**
     - Accede a la documentación interactiva en Swagger UI: http://127.0.0.1:8000/docs.
     - También puedes ver la documentación en formato ReDoc en: http://127.0.0.1:8000/redoc.
+
+## 3. Realizar migraciones de base de datos
+
+Para aplicar y gestionar las migraciones de la base de datos en el proyecto, utilizamos Tortoise ORM junto con Aerich. Sigue estos pasos para realizar las migraciones:
+
+1. **Inicializar Aerich en el Proyecto (Solo la primera vez):**
+
+    Este paso es necesario para configurar Aerich en el proyecto y crear las carpetas de migración:
+
+    aerich init -t app.TORTOISE_ORM
+    aerich init-db
+
+2. **Crear Migraciones:**
+
+    Cada vez que realices cambios en los modelos de datos, debes crear una nueva migración. Esto se hace con:
+
+    aerich migrate --name "descripcion_del_cambio"
+
+    Reemplaza "descripcion_del_cambio" con un nombre descriptivo que identifique los cambios realizados (por ejemplo, "add_new_field_to_station").
+
+3. **Aplicar Migraciones:**
+
+    aerich upgrade
+
+    **NOTA:**
+
+    Si tienes problemas con las migraciones, puedes intentar eliminarlas y crear un esquema desde cero (solo en entornos de desarrollo) con los siguientes comandos:
+
+    rm -rf migrations  # Eliminar la carpeta de migraciones
+    aerich init-db     # Re-inicializar la base de datos con Aerich
+
