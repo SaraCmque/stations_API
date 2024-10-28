@@ -74,14 +74,21 @@ def get_closest_station(db: Session, station_id: int):
     Returns:
         Station or None: The closest station object, or None if the reference station doesn't exist.
     """
-    base_station = get_station_by_id(db, station_id)
+    base_station = db.query(Station).filter(Station.id == station_id).first()
     if not base_station:
         return None
 
-    closest = db.query(
-        Station,
-        (func.pow(Station.latitude - base_station.latitude, 2) +
-         func.pow(Station.longitude - base_station.longitude, 2)).label("distance")
-    ).filter(Station.id != station_id).order_by("distance").first()
-
-    return closest[0] if closest else None  # closest is a tuple (Station, distance)
+    # Encontrar la estación más cercana
+    closest_station = (
+        db.query(Station)
+        .filter(Station.id != station_id)  # Excluir la estación de referencia
+        .order_by(
+            func.sqrt(
+                func.pow(Station.latitude - base_station.latitude, 2) +
+                func.pow(Station.longitude - base_station.longitude, 2)
+            )
+        )
+        .first()
+    )
+    
+    return closest_station

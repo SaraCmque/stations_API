@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
 
-from app.api.models.models import StationCreate, StationResponse
+from app.api.models.models import StationCreate, StationResponse, Location
 from app.api.methods.methods import create_station, get_stations, get_closest_station
 from app.api.config.database import get_db
 
@@ -55,4 +55,13 @@ def get_closest_station_endpoint(station_id: int, db: Session = Depends(get_db))
     closest_station = get_closest_station(db=db, station_id=station_id)
     if closest_station is None:
         raise HTTPException(status_code=404, detail="Station not found or no nearby stations available.")
-    return closest_station
+
+    # Formatea la respuesta para incluir el campo `location` correctamente
+    return StationResponse(
+        id=closest_station.id,
+        name=closest_station.name,
+        location=Location(
+            latitude=closest_station.latitude,
+            longitude=closest_station.longitude
+        )
+    )
