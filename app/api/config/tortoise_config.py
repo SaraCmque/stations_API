@@ -9,7 +9,7 @@ TORTOISE_ORM = {
     },
     "apps": {
         "models": {
-            "models": ["app.api.models.tortoise_models", "aerich.models"],  # Ruta a los modelos y a Aerich
+            "models": ["app.api.models.tortoise_models", "aerich.models"],
             "default_connection": "default",
         }
     }

@@ -9,7 +9,7 @@ app = FastAPI()
 register_tortoise(
     app,
     config=TORTOISE_ORM,
-    generate_schemas=False,  # Usaremos Aerich para las migraciones
+    generate_schemas=False,  
     add_exception_handlers=True,
 )
 
