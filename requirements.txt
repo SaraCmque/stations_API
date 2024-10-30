@@ -1,10 +1,10 @@
 fastapi==0.95.0
 uvicorn[standard]==0.22.0
 sqlalchemy==2.0.18
-psycopg2-binary
+psycopg2
 python-dotenv==1.0.0
-tortoise-orm
-aerich
-asyncpg
+tortoise-orm==0.19.3
+aerich==0.6.3
+asyncpg==0.26.0
 pytest
 httpx
