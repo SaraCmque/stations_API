@@ -63,3 +63,16 @@ Para aplicar y gestionar las migraciones de la base de datos en el proyecto, uti
     rm -rf migrations  # Eliminar la carpeta de migraciones
     aerich init-db     # Re-inicializar la base de datos con Aerich
 
+## 4. Ejecutar pruebas unitarias
+
+Para ejecutar las pruebas unitarias, asegúrate de que el entorno de desarrollo esté configurado y que las dependencias estén instaladas. Utilizamos pytest para gestionar las pruebas:
+
+1. **Ejecutar las pruebas:**
+
+    pytest
+
+    Este comando ejecutará todas las pruebas definidas en el proyecto y mostrará un resumen de los resultados.
+
+2. **Revisar el Reporte de Pruebas:**
+
+    Al finalizar, pytest proporcionará un resumen de las pruebas, indicando cuántas pasaron, fallaron o fueron omitidas, junto con detalles de cualquier error o falla encontrada.
