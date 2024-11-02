@@ -18,16 +18,16 @@
 
     5.1 **Crear el archivo .env:** Copia el archivo env.example en la raíz del proyecto y renómbralo como .env. Este archivo contiene todas las variables de entorno necesarias para configurar el proyecto.
     5.2 **Configurar las Variables de Entorno:** A continuación, se muestran las variables de entorno necesarias y su propósito:
-       DATABASE_URL: Configura la URL de conexión a PostgreSQL.
-       POSTGRES_USER: El nombre de usuario de la base de datos de PostgreSQL.
-       POSTGRES_PASSWORD: La contraseña del usuario de la base de datos de PostgreSQL.
-       POSTGRES_DB: El nombre de la base de datos de PostgreSQL.
+       - `DATABASE_URL`: Configura la URL de conexión a PostgreSQL.
+       - `POSTGRES_USER`: El nombre de usuario de la base de datos de PostgreSQL.
+       - `POSTGRES_PASSWORD`: La contraseña del usuario de la base de datos de PostgreSQL.
+       - `POSTGRES_DB`: El nombre de la base de datos de PostgreSQL.
 
     5.3 Ejemplo de archivo .env:
-       DATABASE_URL=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@localhost:5432/POSTGRES_DB
-       POSTGRES_USER=tu_usuario
-       POSTGRES_PASSWORD=tu_contraseña
-       POSTGRES_DB=nombre_base_datos
+       - `DATABASE_URL`=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@localhost:5432/POSTGRES_DB
+       - `POSTGRES_USER`=tu_usuario
+       - `POSTGRES_PASSWORD`=tu_contraseña
+       - `POSTGRES_DB`=nombre_base_datos
 
    **NOTA:** En entornos de Docker Compose, localhost debe ser reemplazado por el nombre del servicio de base de datos (db), así:
        DATABASE_URL=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@db:5432/POSTGRES_DB
