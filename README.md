@@ -24,13 +24,16 @@
        - `POSTGRES_DB`: El nombre de la base de datos de PostgreSQL.
 
     5.3 Ejemplo de archivo .env:
-       - `DATABASE_URL`=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@localhost:5432/POSTGRES_DB
-       - `POSTGRES_USER`=tu_usuario
-       - `POSTGRES_PASSWORD`=tu_contraseña
-       - `POSTGRES_DB`=nombre_base_datos
-
+   ```plaintext
+      DATABASE_URL=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@localhost:5432/POSTGRES_DB
+      POSTGRES_USER=tu_usuario
+      POSTGRES_PASSWORD=tu_contraseña
+      POSTGRES_DB=nombre_base_datos
+      ```
    **NOTA:** En entornos de Docker Compose, localhost debe ser reemplazado por el nombre del servicio de base de datos (db), así:
-       DATABASE_URL=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@db:5432/POSTGRES_DB
+   ```plaintext
+      DATABASE_URL=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@db:5432/POSTGRES_DB
+      ```
 
 ## 2. Ejecución del Proyecto
 
