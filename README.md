@@ -31,7 +31,7 @@
       POSTGRES_PASSWORD=tu_contraseña
       POSTGRES_DB=nombre_base_datos
       ```
-   **NOTA:** En entornos de Docker Compose, localhost debe ser reemplazado por el nombre del servicio de base de datos (db), así:
+   **NOTA:** En entornos de Docker, localhost debe ser reemplazado por el nombre del servicio de base de datos (db), así:
    ```plaintext
       DATABASE_URL=postgresql://POSTGRES_USER:POSTGRES_PASSWORD@db:5432/POSTGRES_DB
       ```
