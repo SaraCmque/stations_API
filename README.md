@@ -16,8 +16,8 @@
 
 5. **Configurar Variables de Entorno:**
 
-    5.1 **Crear el archivo .env:** Copia el archivo env.example en la raíz del proyecto y renómbralo como .env. Este archivo contiene todas las variables de entorno necesarias para configurar el proyecto.
-    5.2 **Configurar las Variables de Entorno:** A continuación, se muestran las variables de entorno necesarias y su propósito:
+   5.1 **Crear el archivo .env:** Copia el archivo env.example en la raíz del proyecto y renómbralo como .env. Este archivo contiene todas las variables de entorno necesarias para configurar el proyecto.
+   5.2 **Configurar las Variables de Entorno:** A continuación, se muestran las variables de entorno necesarias y su propósito:
    - `DATABASE_URL`: Configura la URL de conexión a PostgreSQL.
    - `POSTGRES_USER`: El nombre de usuario de la base de datos de PostgreSQL.
    - `POSTGRES_PASSWORD`: La contraseña del usuario de la base de datos de PostgreSQL.
